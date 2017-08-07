@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span jhiTranslate="shelterApp.shelter.home.title">Shelters</span>
+        <button class="btn btn-primary float-right create-shelter" [routerLink]="['/', { outlets: { popup: ['shelter-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="shelterApp.shelter.home.createLabel">
+            Create new Shelter
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="shelters">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="shelterApp.shelter.name">Name</span></th>
+            <th><span jhiTranslate="shelterApp.shelter.address">Address</span></th>
+            <th><span jhiTranslate="shelterApp.shelter.latitude">Latitude</span></th>
+            <th><span jhiTranslate="shelterApp.shelter.longitude">Longitude</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let shelter of shelters ;trackBy: trackId">
+                <td><a [routerLink]="['../shelter', shelter.id ]">{{shelter.id}}</a></td>
+                <td>{{shelter.name}}</td>
+                <td>{{shelter.address}}</td>
+                <td>{{shelter.latitude}}</td>
+                <td>{{shelter.longitude}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../shelter', shelter.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'shelter/'+ shelter.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'shelter/'+ shelter.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

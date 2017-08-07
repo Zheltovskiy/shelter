@@ -1,0 +1,50 @@
+
+<div *ngIf="pet">
+    <h2><span jhiTranslate="shelterApp.pet.detail.title">Pet</span> {{pet.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="shelterApp.pet.name">Name</span></dt>
+        <dd>
+            <span>{{pet.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="shelterApp.pet.color">Color</span></dt>
+        <dd>
+            <span>{{pet.color}}</span>
+        </dd>
+        <dt><span jhiTranslate="shelterApp.pet.ageInMonths">Age In Months</span></dt>
+        <dd>
+            <span>{{pet.ageInMonths}}</span>
+        </dd>
+        <dt><span jhiTranslate="shelterApp.pet.type">Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'shelterApp.PetType.' + pet.type}}">{{pet.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="shelterApp.pet.otherTypeName">Other Type Name</span></dt>
+        <dd>
+            <span>{{pet.otherTypeName}}</span>
+        </dd>
+        <dt><span jhiTranslate="shelterApp.pet.mainPhoto">Main Photo</span></dt>
+        <dd>
+            <div *ngIf="pet.mainPhoto">
+                <a (click)="openFile(pet.mainPhotoContentType, pet.mainPhoto)">
+                    <img [src]="'data:' + pet.mainPhotoContentType + ';base64,' + pet.mainPhoto" style="max-width: 100%;" alt="pet image"/>
+                </a>
+                {{pet.mainPhotoContentType}}, {{byteSize(pet.mainPhoto)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'pet/'+ pet.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

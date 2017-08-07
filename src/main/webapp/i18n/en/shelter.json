@@ -1,0 +1,24 @@
+{
+    "shelterApp": {
+        "shelter" : {
+            "home": {
+                "title": "Shelters",
+                "createLabel": "Create a new Shelter",
+                "createOrEditLabel": "Create or edit a Shelter"
+            },
+            "created": "A new Shelter is created with identifier {{ param }}",
+            "updated": "A Shelter is updated with identifier {{ param }}",
+            "deleted": "A Shelter is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Shelter {{ id }}?"
+            },
+            "detail": {
+                "title": "Shelter"
+            },
+            "name": "Name",
+            "address": "Address",
+            "latitude": "Latitude",
+            "longitude": "Longitude"
+        }
+    }
+}

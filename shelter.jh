@@ -1,0 +1,36 @@
+entity Pet {
+	name String,
+    color String,
+    ageInMonths Integer,
+    type PetType,
+    otherTypeName String,
+    mainPhoto ImageBlob
+}
+
+entity Photo {
+	image ImageBlob
+}
+
+entity Shelter {
+	name String,
+    address String,
+    latitude Double,
+    longitude Double
+}
+
+entity Contact {
+	type ContactType,
+    link String
+}
+
+enum ContactType {
+	PHONE, EMAIL, INSTAGRAM, FACEBOOK, VK, OK
+}
+
+enum PetType {
+    CAT, DOG, OTHER
+}
+
+dto * with mapstruct
+
+service all with serviceClass

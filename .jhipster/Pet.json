@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ageInMonths",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "PetType",
+            "fieldValues": "CAT,DOG,OTHER"
+        },
+        {
+            "fieldName": "otherTypeName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mainPhoto",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "changelogDate": "20170718153255",
+    "entityTableName": "pet",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass"
+}

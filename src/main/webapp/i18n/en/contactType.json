@@ -1,0 +1,13 @@
+{
+    "shelterApp": {
+        "ContactType" : {
+            "null": "",
+            "PHONE": "PHONE",
+            "EMAIL": "EMAIL",
+            "INSTAGRAM": "INSTAGRAM",
+            "FACEBOOK": "FACEBOOK",
+            "VK": "VK",
+            "OK": "OK"
+        }
+    }
+}

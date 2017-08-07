@@ -1,0 +1,10 @@
+{
+    "shelterApp": {
+        "PetType" : {
+            "null": "",
+            "CAT": "CAT",
+            "DOG": "DOG",
+            "OTHER": "OTHER"
+        }
+    }
+}

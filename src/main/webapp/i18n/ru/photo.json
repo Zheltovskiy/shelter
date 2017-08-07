@@ -1,0 +1,21 @@
+{
+    "shelterApp": {
+        "photo" : {
+            "home": {
+                "title": "Photos",
+                "createLabel": "Создать новый Photo",
+                "createOrEditLabel": "Создать или отредактировать Photo"
+            },
+            "created": "Новый Photo создан с идентификатором {{ param }}",
+            "updated": "Photo обновлен с идентификатором {{ param }}",
+            "deleted": "Photo удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Photo {{ id }}?"
+            },
+            "detail": {
+                "title": "Photo"
+            },
+            "image": "Image"
+        }
+    }
+}

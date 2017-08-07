@@ -1,0 +1,70 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPetLabel" jhiTranslate="shelterApp.pet.home.createOrEditLabel">Create or edit a Pet</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!pet.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="pet.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="shelterApp.pet.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="pet.name"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="shelterApp.pet.color" for="field_color">Color</label>
+            <input type="text" class="form-control" name="color" id="field_color"
+                [(ngModel)]="pet.color"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="shelterApp.pet.ageInMonths" for="field_ageInMonths">Age In Months</label>
+            <input type="number" class="form-control" name="ageInMonths" id="field_ageInMonths"
+                [(ngModel)]="pet.ageInMonths"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="shelterApp.pet.type" for="field_type">Type</label>
+            <select class="form-control" name="type" [(ngModel)]="pet.type" id="field_type" >
+                <option value="CAT" jhiTranslate="shelterApp.PetType.CAT">CAT</option>
+                <option value="DOG" jhiTranslate="shelterApp.PetType.DOG">DOG</option>
+                <option value="OTHER" jhiTranslate="shelterApp.PetType.OTHER">OTHER</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="shelterApp.pet.otherTypeName" for="field_otherTypeName">Other Type Name</label>
+            <input type="text" class="form-control" name="otherTypeName" id="field_otherTypeName"
+                [(ngModel)]="pet.otherTypeName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="shelterApp.pet.mainPhoto" for="field_mainPhoto">Main Photo</label>
+            <div>
+                <img [src]="'data:' + pet.mainPhotoContentType + ';base64,' + pet.mainPhoto" style="max-height: 100px;" *ngIf="pet.mainPhoto" alt="pet image"/>
+                <div *ngIf="pet.mainPhoto" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{pet.mainPhotoContentType}}, {{byteSize(pet.mainPhoto)}}</span>
+                    <button type="button" (click)="clearInputImage('mainPhoto', 'mainPhotoContentType', 'fileImage')" class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="fileImage" (change)="setFileData($event, pet, 'mainPhoto', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="mainPhoto" id="field_mainPhoto"
+                [(ngModel)]="pet.mainPhoto"  />
+            <input type="hidden" class="form-control" name="mainPhotoContentType" id="field_mainPhotoContentType"
+                [(ngModel)]="pet.mainPhotoContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

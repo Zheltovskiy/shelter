@@ -1,0 +1,22 @@
+{
+    "shelterApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Создать новый Contact",
+                "createOrEditLabel": "Создать или отредактировать Contact"
+            },
+            "created": "Новый Contact создан с идентификатором {{ param }}",
+            "updated": "Contact обновлен с идентификатором {{ param }}",
+            "deleted": "Contact удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "type": "Type",
+            "link": "Link"
+        }
+    }
+}

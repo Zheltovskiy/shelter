@@ -1,0 +1,26 @@
+{
+    "shelterApp": {
+        "pet" : {
+            "home": {
+                "title": "Pets",
+                "createLabel": "Создать новый Pet",
+                "createOrEditLabel": "Создать или отредактировать Pet"
+            },
+            "created": "Новый Pet создан с идентификатором {{ param }}",
+            "updated": "Pet обновлен с идентификатором {{ param }}",
+            "deleted": "Pet удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Pet {{ id }}?"
+            },
+            "detail": {
+                "title": "Pet"
+            },
+            "name": "Name",
+            "color": "Color",
+            "ageInMonths": "Age In Months",
+            "type": "Type",
+            "otherTypeName": "Other Type Name",
+            "mainPhoto": "Main Photo"
+        }
+    }
+}

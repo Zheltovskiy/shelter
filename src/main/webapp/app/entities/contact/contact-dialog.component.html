@@ -1,0 +1,41 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myContactLabel" jhiTranslate="shelterApp.contact.home.createOrEditLabel">Create or edit a Contact</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!contact.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="contact.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="shelterApp.contact.type" for="field_type">Type</label>
+            <select class="form-control" name="type" [(ngModel)]="contact.type" id="field_type" >
+                <option value="PHONE" jhiTranslate="shelterApp.ContactType.PHONE">PHONE</option>
+                <option value="EMAIL" jhiTranslate="shelterApp.ContactType.EMAIL">EMAIL</option>
+                <option value="INSTAGRAM" jhiTranslate="shelterApp.ContactType.INSTAGRAM">INSTAGRAM</option>
+                <option value="FACEBOOK" jhiTranslate="shelterApp.ContactType.FACEBOOK">FACEBOOK</option>
+                <option value="VK" jhiTranslate="shelterApp.ContactType.VK">VK</option>
+                <option value="OK" jhiTranslate="shelterApp.ContactType.OK">OK</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="shelterApp.contact.link" for="field_link">Link</label>
+            <input type="text" class="form-control" name="link" id="field_link"
+                [(ngModel)]="contact.link"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
