@@ -198,6 +198,9 @@ dependencies {
     compile ("io.springfox:springfox-swagger2:${springfox_version}") {
         exclude module: 'mapstruct'
     }
+    compile ("com.google.guava:guava:20.0") {
+        force = true
+    }
     compile "io.springfox:springfox-bean-validators:${springfox_version}"
     compile "org.mapstruct:mapstruct-jdk8:${mapstruct_version}"
     compile "org.apache.httpcomponents:httpclient"
