@@ -59,7 +59,7 @@ public class PetsDataMigration {
         mongoTemplate.save(rolda);
 
         Pet druzhok = new Pet();
-        druzhok.setName("Уголёк");
+        druzhok.setName("Дружок");
         druzhok.setColor("BLACK");
         druzhok.setAgeInMonths(5);
         druzhok.setMainPhoto(getPetImage("druzhok"));

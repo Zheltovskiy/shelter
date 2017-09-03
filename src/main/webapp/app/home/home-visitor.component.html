@@ -1,0 +1,37 @@
+<div>
+    <!--<h2>-->
+    <!--<span jhiTranslate="shelterApp.pet.home.title">Pets</span>-->
+    <!--<button class="btn btn-primary float-right create-pet"-->
+    <!--[routerLink]="['/', { outlets: { popup: ['pet-new'] } }]">-->
+    <!--<span class="fa fa-plus"></span>-->
+    <!--<span jhiTranslate="shelterApp.pet.home.createLabel">-->
+    <!--Create new Pet-->
+    <!--</span>-->
+    <!--</button>-->
+    <!--</h2>-->
+    <!--<jhi-alert></jhi-alert>-->
+    <!--<br/>-->
+    <div class="row">
+        <div *ngFor="let pet of pets ;trackBy: trackId">
+            <div class="col-md-6">
+                <md-card style="width: 400px; margin-bottom: 50px;">
+                    <md-card-header>
+                        <md-card-title>{{pet.name}}</md-card-title>
+                        <md-card-subtitle>Dog Breed</md-card-subtitle>
+                    </md-card-header>
+                    <img md-card-image [src]="'data:' + pet.mainPhotoContentType + ';base64,' + pet.mainPhoto">
+                    <md-card-content>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Age: {{pet.ageInMonths}}</li>
+                            <li class="list-group-item">Color: {{pet.color}}</li>
+                        </ul>
+                    </md-card-content>
+                    <md-card-actions>
+                        <button md-button>LIKE</button>
+                        <button md-button>SHARE</button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+        </div>
+    </div>
+</div>
